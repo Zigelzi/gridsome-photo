@@ -1,13 +1,18 @@
 <template>
   <Layout>
     <div class="content">
-      <p>Content goes here</p>
+      <PhotoGallery />
     </div>
   </Layout>
 </template>
 
 <script>
+import PhotoGallery from "@/components/PhotoGallery";
+
 export default {
+  components: {
+    PhotoGallery
+  },
   metaInfo: {
     title: 'Hello, world!'
   }
@@ -16,7 +21,9 @@ export default {
 
 <style lang="scss">
 .content {
-  border: 1px solid var(--primary-gray);
-  padding: 10px;
+  width: 100%;
+  padding-top: var(--header-height);
 }
+
+
 </style>

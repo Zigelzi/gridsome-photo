@@ -23,17 +23,14 @@ query {
 
 <style lang="scss">
 .layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-top: var(--header-height);
-  padding-left: 20px;
-  padding-right: 20px;
+  
 }
 
 .header {
   position: fixed;
   width: 100%;
   height: var(--header-height);
+  background: rgba(white, 0.7);
 }
 
 .main-title {
