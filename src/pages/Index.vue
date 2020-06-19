@@ -14,7 +14,7 @@ export default {
     PhotoGallery
   },
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Gallery'
   }
 }
 </script>

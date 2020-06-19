@@ -43,14 +43,17 @@ export default {
 }
 
 .photo-container {
-    height: 40vh;
+    // height: 40vh;
     flex-grow: 1;
+    flex-basis: 49%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    min-width: 250px;
 }
 
 .photo {
     max-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    vertical-align: bottom;
 }
 </style>
