@@ -1,14 +1,17 @@
 <template>
   <Layout>
-    <h1>About us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    <div class="text-contents">
+      <h1 class="mg-top-0">About me</h1>
+      <p>I'm passionate hobby photographer focusing mostly taking pictures of pets, nature and people.</p>
+      <p>I want to capture and share the beautiful places all around Finland and the happy moments with pets.</p>
+    </div>
   </Layout>
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'About us'
+    title: 'About'
   }
 }
 </script>

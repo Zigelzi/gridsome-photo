@@ -8,7 +8,9 @@
       <Navigation />
     </header>
     <div class="layout">
+      <div class="content">
       <slot/>
+      </div>
     </div>
   </div>
 </template>

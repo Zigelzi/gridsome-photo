@@ -1,8 +1,6 @@
 <template>
   <Layout>
-    <div class="content">
       <PhotoGallery />
-    </div>
   </Layout>
 </template>
 
