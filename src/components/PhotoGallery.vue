@@ -1,9 +1,9 @@
 <template>
     <div class="photo-gallery">
-        <div class="photo-container" v-for="edge in $static.photos.edges" :key="edge.node.id" @click="openPhoto">
+        <div class="photo-container" v-for="(edge, index) in $static.photos.edges" :key="index" @click="openPhoto(index)">
             <g-image class="photo" :src="edge.node.photo.asset.url" />
         </div>
-        <PhotoModal v-if="modalIsOpen" />
+        <PhotoModal v-if="modalIsOpen" @closeModal="hideModal" :photoNode="$static.photos.edges[currentIndex].node" />
     </div>
 </template>
 <static-query>
@@ -38,7 +38,8 @@ export default {
         }
     },
     methods: {
-        openPhoto() {
+        openPhoto(index) {
+            this.currentIndex = index;
             this.showModal();
         },
         showModal() {
@@ -59,7 +60,6 @@ export default {
 }
 
 .photo-container {
-    // height: 40vh;
     flex-grow: 1;
     flex-basis: 49%;
     margin-right: 1%;
