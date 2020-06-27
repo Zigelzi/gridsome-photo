@@ -3,7 +3,7 @@
         <div class="photo-container" v-for="(edge, index) in $static.photos.edges" :key="index" @click="openPhoto(index)">
             <g-image class="photo" :src="edge.node.photo.asset.url" />
         </div>
-        <PhotoModal v-if="modalIsOpen" @closeModal="hideModal" :photoNode="$static.photos.edges[currentIndex].node" />
+        <PhotoModal v-if="modalIsOpen" @closeModal="hideModal" :photoNodes="$static.photos.edges" :photoIndex="photoIndex" />
     </div>
 </template>
 <static-query>
@@ -33,13 +33,13 @@ export default {
     },
     data() {
         return {
-            currentIndex: 0,
+            photoIndex: 0,
             modalIsOpen: false
         }
     },
     methods: {
         openPhoto(index) {
-            this.currentIndex = index;
+            this.photoIndex = index;
             this.showModal();
         },
         showModal() {

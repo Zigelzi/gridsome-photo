@@ -1,14 +1,14 @@
 <template>
     <div class="photo-modal">
         <button class="btn btn-close" @click="closeModal">X</button>
-        <button class="btn btn-navigator text-white btn-prev"><</button>
-        <button class="btn btn-navigator text-white btn-next">></button>
+        <button class="btn btn-navigator text-white btn-prev" @click="previousPhoto"><</button>
+        <button class="btn btn-navigator text-white btn-next" @click="nextPhoto" >></button>
         <div class="photo-modal-container" >
             <div>
-                <g-image class="photo modal-photo" :src="photoNode.photo.asset.url" />
+                <g-image class="photo modal-photo" :src="photoNodes[currentIndex].node.photo.asset.url" />
                 <div class="photo-details">
                     <h2 class="padding-sm mg-0">
-                        {{ photoNode.title }}
+                        {{ photoNodes[currentIndex].node.title }}
                     </h2>
                 </div>
             </div>
@@ -19,12 +19,33 @@
 <script>
 export default {
     props: {
-        photoNode: Object
+        photoNodes: Array,
+        photoIndex: Number
+    },
+    data() {
+        return {
+            currentIndex: 0
+        }
     },
     methods: {
         closeModal() {
             this.$emit('closeModal');
+        },
+        previousPhoto() {
+            this.currentIndex--;
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.photoNodes.length - 1;
+            }
+        },
+        nextPhoto() {
+            this.currentIndex++;
+            if (this.currentIndex > this.photoNodes.length -1) {
+                this.currentIndex = 0;
+            }
         }
+    },
+    created() {
+        this.currentIndex = this.photoIndex;
     }
 }
 </script>
